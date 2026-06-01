@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────
+   Plan Happy Wealth — Global foundation
+   Luxury fintech: deep navy canvas, gold signal, frosted depth.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --bg: #07111f;
+  --bg-elev: #0e1b2e;
+  --gold: #d4af37;
+  --cloud: #f8f9fb;
+
+  --ring: rgba(212, 175, 55, 0.5);
+  --hairline: rgba(255, 255, 255, 0.08);
+  --glass: rgba(255, 255, 255, 0.04);
+
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--hairline);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--cloud);
+    font-feature-settings: "ss01", "cv01", "cv11";
+    overflow-x: hidden;
+  }
+
+  /* Gold focus ring — accessible + on-brand */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.28);
+    color: #fff;
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05080f;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1b3149;
+    border-radius: 999px;
+    border: 2px solid #05080f;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2a466a;
+  }
+}
+
+@layer components {
+  /* Frosted glass surface — the core material of the system */
+  .glass {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid var(--hairline);
+  }
+
+  .glass-strong {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.03)
+    );
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Editorial gold-to-white gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #f4e6b8 0%, #d4af37 45%, #967421 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-light {
+    background: linear-gradient(180deg, #ffffff 0%, #c7cedb 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Uppercase tracked kicker label */
+  .kicker {
+    @apply text-xs font-medium uppercase tracking-kicker text-gold/80;
+  }
+
+  /* Hairline gold divider */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 175, 55, 0.55),
+      transparent
+    );
+  }
+
+  /* Section vertical rhythm */
+  .section {
+    @apply relative mx-auto w-full max-w-7xl px-6 py-24 md:px-8 md:py-32;
+  }
+
+  /* Animated gold-edged shine for premium CTAs */
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .shine:hover::after {
+    opacity: 1;
+    animation: shimmer 1.4s linear;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--tw-bg-noise, none);
+    opacity: 0.025;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+}
+
+/* Respect user motion preferences — luxury is never nauseating */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
