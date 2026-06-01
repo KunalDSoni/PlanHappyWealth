@@ -8,6 +8,7 @@ import "@fontsource/jetbrains-mono/500.css";
 import "./globals.css";
 
 import { SITE } from "@/lib/constants";
+import { asset } from "@/lib/basePath";
 
 export const viewport: Viewport = {
   themeColor: "#07111F",
@@ -43,13 +44,13 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} — Your family's dreams deserve more than advice`,
     description: SITE.description,
-    images: [{ url: "/og.svg", width: 1200, height: 630, alt: SITE.name }],
+    images: [{ url: asset("/og.svg"), width: 1200, height: 630, alt: SITE.name }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE.name}`,
     description: SITE.tagline,
-    images: ["/og.svg"],
+    images: [asset("/og.svg")],
   },
   robots: {
     index: true,
@@ -57,10 +58,10 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/favicon.svg" }],
+    icon: [{ url: asset("/favicon.svg"), type: "image/svg+xml" }],
+    apple: [{ url: asset("/favicon.svg") }],
   },
-  manifest: "/manifest.webmanifest",
+  manifest: asset("/manifest.webmanifest"),
   category: "finance",
 };
 

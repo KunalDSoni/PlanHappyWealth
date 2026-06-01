@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, Send, ShieldCheck, Bot, User } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { askGuide } from "@/lib/ai-guide";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -39,22 +40,18 @@ export function AIGuide() {
   async function send(text: string) {
     const content = text.trim();
     if (!content || loading) return;
-    const next = [...messages, { role: "user", content } as Msg];
+    const next: Msg[] = [...messages, { role: "user", content }];
     setMessages(next);
     setInput("");
     setLoading(true);
     try {
-      const res = await fetch("/api/ai-guide", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next }),
-      });
-      const data = (await res.json()) as { reply?: string };
-      setMessages((m) => [...m, { role: "assistant", content: data.reply ?? "Let's connect you with an advisor." }]);
+      // Runs client-side — works on static hosts (GitHub Pages) with no server.
+      const reply = await askGuide(next);
+      setMessages((m) => [...m, { role: "assistant", content: reply }]);
     } catch {
       setMessages((m) => [
         ...m,
-        { role: "assistant", content: "I had trouble reaching the server — but a human advisor can help right away. Book a free session below." },
+        { role: "assistant", content: "Let's connect you with a human advisor — book a free session below." },
       ]);
     } finally {
       setLoading(false);

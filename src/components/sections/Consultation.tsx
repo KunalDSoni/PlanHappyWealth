@@ -38,16 +38,20 @@ export function Consultation() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
-    const form = e.currentTarget;
-    const payload = Object.fromEntries(new FormData(form).entries());
+    const payload = Object.fromEntries(new FormData(e.currentTarget).entries());
     try {
-      await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, source: "consultation" }),
-      });
+      // Static-host friendly: post to Formspree if configured, else capture
+      // optimistically. (For a server deploy, point this at /api/lead instead.)
+      const formspree = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+      if (formspree) {
+        await fetch(`https://formspree.io/f/${formspree}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({ ...payload, source: "consultation" }),
+        });
+      }
     } catch {
-      /* lead is captured optimistically even if the network blips */
+      /* never block the user on a network hiccup */
     } finally {
       setSubmitting(false);
       setSent(true);

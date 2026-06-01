@@ -1,18 +1,16 @@
 import { NextResponse } from "next/server";
+import { scriptedReply, type ChatMessage } from "@/lib/ai-guide";
 
 export const runtime = "edge";
 
-interface ChatMessage {
-  role: "user" | "assistant";
-  content: string;
-}
-
 /**
- * AI Financial Guide endpoint.
+ * OPTIONAL server endpoint for the AI Financial Guide.
  *
- * Ships with a thoughtful, scripted knowledge base so the experience works
- * with zero configuration. Set AI_GUIDE_API_KEY and implement `callProvider`
- * to upgrade to a live LLM (OpenAI, Anthropic, etc.) without touching the UI.
+ * The UI runs the guide client-side (so it works on static hosts like GitHub
+ * Pages with no server). This route exists only for server deployments that
+ * want to upgrade to a live LLM — set AI_GUIDE_API_KEY and implement
+ * `callProvider`. It is removed automatically by the GitHub Pages workflow,
+ * since static export does not support dynamic route handlers.
  */
 export async function POST(req: Request) {
   let messages: ChatMessage[] = [];
@@ -27,8 +25,7 @@ export async function POST(req: Request) {
 
   if (process.env.AI_GUIDE_API_KEY) {
     try {
-      const reply = await callProvider(messages);
-      return NextResponse.json({ reply });
+      return NextResponse.json({ reply: await callProvider(messages) });
     } catch {
       // fall through to scripted guide
     }
@@ -39,30 +36,6 @@ export async function POST(req: Request) {
 
 async function callProvider(_messages: ChatMessage[]): Promise<string> {
   // Integration point — wire your provider of choice here.
-  // Keep the system prompt fiduciary, educational, and never a substitute for advice.
+  // Keep the system prompt fiduciary, educational, never a substitute for advice.
   throw new Error("provider-not-implemented");
-}
-
-function scriptedReply(qRaw: string): string {
-  const q = qRaw.toLowerCase();
-
-  if (/(retire|retirement|55|60|corpus)/.test(q)) {
-    return "A simple way to size retirement: estimate your annual expenses at retirement, then multiply by ~25 (the 4% rule). So ₹12L/yr of spending suggests a ₹3 Cr corpus. The earlier you start an escalating SIP, the gentler the monthly number. Want a planner to model your exact figure? Book a free session below.";
-  }
-  if (/(insur|term|cover|life cover|protection)/.test(q)) {
-    return "A good rule of thumb for life insurance is 10–20× your annual income, plus any large loans, minus existing assets. Pure term cover is the cheapest, cleanest way to get there — avoid mixing insurance with investment. I can have an advisor right-size yours precisely.";
-  }
-  if (/(invest|sip|mutual fund|stock|begin|start|beginner)/.test(q)) {
-    return "Beginners do best with a simple, automated, diversified setup: an emergency fund first, then monthly SIPs into low-cost index and diversified equity funds matched to your risk comfort. Consistency beats timing. The key is to start small and increase with every raise.";
-  }
-  if (/(child|education|kid|college|school)/.test(q)) {
-    return "For a child's education, define the goal year and today's cost, then inflate it (~8–10%/yr for education). Invest in equity-heavy funds while the horizon is long, gliding to safer assets in the final 2–3 years. A dedicated corpus keeps this goal from competing with retirement.";
-  }
-  if (/(tax|80c|save tax|deduction)/.test(q)) {
-    return "Tax efficiency is about structure, not just deductions: use the right account types, hold equity long enough for favourable treatment, and harvest losses thoughtfully. Done well it can quietly add 1–2% a year — real return with no extra risk. A review usually pays for itself.";
-  }
-  if (/(home|house|property|down payment)/.test(q)) {
-    return "For a home, separate the down-payment goal (shorter horizon, safer assets) from your long-term investing. Keep your EMI under ~35% of income so the home funds your life rather than the reverse. Timing the purchase around your other goals avoids derailing them.";
-  }
-  return "Great question. The honest answer depends on your full picture — income, goals, timeline, and risk comfort. I can give you the fundamentals here, and for anything that affects real money, a certified Plan Happy advisor will review your specifics, free. Want me to set that up?";
 }

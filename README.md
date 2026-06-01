@@ -167,7 +167,26 @@ If the remote already has commits, use `git pull --rebase origin main` first (or
 
 ## ✦ Deploy
 
-One-click on **Vercel**: import the repo, add any env vars, deploy. (Any Node host works: `npm run build && npm start`.)
+### Vercel (recommended — full features)
+
+Import the repo, add any env vars, deploy. Keeps the optional server API routes (LLM hand-off, Supabase lead storage). Any Node host works too: `npm run build && npm start`.
+
+### GitHub Pages (static)
+
+The site also ships as a fully static export. The AI guide runs **client-side** and the consultation form is static-safe (optional [Formspree](https://formspree.io) via `NEXT_PUBLIC_FORMSPREE_ID`), so nothing visibly breaks without a server.
+
+1. Push to `main` — [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and deploys automatically.
+2. In the repo: **Settings → Pages → Source: GitHub Actions** (one-time).
+3. Live at **https://KunalDSoni.github.io/PlanHappyWealth/**.
+
+The workflow sets `GITHUB_PAGES=true` (→ `output: export`, base path `/PlanHappyWealth`, `.nojekyll`) and removes `src/app/api` (static export can't host route handlers). To preview the export locally:
+
+```bash
+GITHUB_PAGES=true npm run build   # outputs to ./out
+npx serve out                     # then open the /PlanHappyWealth/ path
+```
+
+> Renaming the repo? Update `REPO` in `next.config.mjs` so the base path matches.
 
 ---
 
