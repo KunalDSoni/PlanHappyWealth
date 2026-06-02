@@ -24,13 +24,16 @@ export function Navbar() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-x-0 top-0 z-50"
     >
-      <nav
+      <div
         className={cn(
-          "mx-auto flex w-full items-center justify-between px-4 transition-all duration-500 ease-luxury sm:px-6 md:px-8",
+          "w-full transition-colors duration-500 ease-luxury",
           scrolled
-            ? "my-3 max-w-6xl rounded-full border border-cloud/10 bg-navy-800/80 py-2.5 backdrop-blur-xl shadow-glass"
-            : "max-w-7xl py-5",
+            ? "border-b border-cloud/10 bg-navy-900/80 backdrop-blur-xl shadow-glass"
+            : "border-b border-transparent",
         )}
+      >
+      <nav
+        className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 md:px-8"
       >
         <a href="#main" aria-label={`${"Plan Happy Wealth"} home`}>
           <Logo />
@@ -67,6 +70,7 @@ export function Navbar() {
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
+      </div>
 
       <AnimatePresence>
         {open && (
