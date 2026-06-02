@@ -36,7 +36,7 @@ export function Hero() {
       {/* Architectural blueprint — quiet, precise, technical */}
       <BlueprintField className="absolute inset-0 -z-10" />
 
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-8 lg:grid-cols-[1.18fr_0.82fr]">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 sm:px-6 md:gap-12 md:px-8 lg:grid-cols-[1.18fr_0.82fr]">
         <motion.div style={{ y: yText }} variants={container} initial="hidden" animate="show">
           <motion.div
             variants={item}
@@ -64,12 +64,12 @@ export function Hero() {
             generations that follow — so the life you picture is engineered, not hoped for.
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button href={CTA.primary.href} size="lg">
+          <motion.div variants={item} className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <Button href={CTA.primary.href} size="lg" className="w-full sm:w-auto">
               {CTA.primary.label}
               <ArrowRight size={18} />
             </Button>
-            <Button href={CTA.secondary.href} variant="secondary" size="lg">
+            <Button href={CTA.secondary.href} variant="secondary" size="lg" className="w-full sm:w-auto">
               <Activity size={18} className="text-gold" />
               {CTA.secondary.label}
             </Button>
@@ -77,7 +77,7 @@ export function Hero() {
 
           <motion.div
             variants={item}
-            className="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-cloud/10 pt-6 text-sm"
+            className="mt-12 grid max-w-xl grid-cols-2 gap-x-6 gap-y-5 border-t border-cloud/10 pt-6 text-sm sm:grid-cols-3"
           >
             {[
               { k: "Families served", v: "2,400+" },
@@ -85,8 +85,8 @@ export function Hero() {
               { k: "Generational horizons", v: "30 yrs" },
             ].map((s) => (
               <div key={s.k}>
-                <p className="font-display text-xl font-semibold text-cloud md:text-2xl">{s.v}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-kicker text-cloud-faint">{s.k}</p>
+                <p className="font-display text-lg font-semibold text-cloud sm:text-xl md:text-2xl">{s.v}</p>
+                <p className="mt-1 text-[10px] uppercase tracking-kicker text-cloud-faint sm:text-[11px]">{s.k}</p>
               </div>
             ))}
           </motion.div>
@@ -120,7 +120,7 @@ function BlueprintCard() {
     { k: "01", label: "Foundation", value: "Protection · Liquidity", pct: 100 },
   ];
   return (
-    <div className="glass-strong relative rounded-[2rem] p-7 shadow-glass-lg">
+    <div className="glass-strong relative rounded-3xl p-5 shadow-glass-lg sm:rounded-[2rem] sm:p-7">
       <div className="flex items-start justify-between border-b border-cloud/10 pb-5">
         <div>
           <p className="text-[10px] uppercase tracking-kicker text-cloud-faint">

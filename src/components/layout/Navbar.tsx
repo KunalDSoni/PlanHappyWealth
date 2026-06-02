@@ -26,10 +26,10 @@ export function Navbar() {
     >
       <nav
         className={cn(
-          "mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 ease-luxury md:px-8",
+          "mx-auto flex w-full items-center justify-between px-4 transition-all duration-500 ease-luxury sm:px-6 md:px-8",
           scrolled
-            ? "my-3 rounded-full border border-cloud/10 bg-navy-800/70 py-2.5 backdrop-blur-xl shadow-glass md:mx-6"
-            : "py-5",
+            ? "my-3 max-w-6xl rounded-full border border-cloud/10 bg-navy-800/80 py-2.5 backdrop-blur-xl shadow-glass"
+            : "max-w-7xl py-5",
         )}
       >
         <a href="#main" aria-label={`${"Plan Happy Wealth"} home`}>
