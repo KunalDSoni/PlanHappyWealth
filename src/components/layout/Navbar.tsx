@@ -35,7 +35,7 @@ export function Navbar() {
       <nav
         className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 md:px-8"
       >
-        <a href="#main" aria-label={`${"Plan Happy Wealth"} home`}>
+        <a href="/" aria-label={`${"Plan Happy Wealth"} home`}>
           <Logo />
         </a>
 

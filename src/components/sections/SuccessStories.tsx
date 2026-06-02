@@ -115,36 +115,56 @@ export function SuccessStories() {
                 </button>
               </div>
 
-              <div className="p-8 md:p-10">
-                <h3 className="font-display text-3xl font-semibold text-cloud">{active.name}</h3>
-                <p className="mt-1 text-cloud-dim">{active.persona}</p>
-
-                <div className="mt-7 grid gap-5 sm:grid-cols-3">
-                  {[
-                    { k: "Before", v: active.before },
-                    { k: "The Journey", v: active.journey },
-                    { k: "Outcome", v: active.outcome },
-                  ].map((b, i) => (
-                    <div key={b.k} className="relative rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-5">
-                      <span className="text-[11px] font-semibold uppercase tracking-kicker text-gold/80">
-                        {String(i + 1).padStart(2, "0")} · {b.k}
-                      </span>
-                      <p className="mt-3 text-sm leading-relaxed text-cloud-muted">{b.v}</p>
-                    </div>
-                  ))}
+              <div className="p-6 sm:p-8 md:p-10">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-kicker text-gold/80">
+                      Wealth Journey · {active.category}
+                    </p>
+                    <h3 className="mt-3 font-display text-3xl font-semibold text-cloud">
+                      {active.name}
+                    </h3>
+                    <p className="mt-1 text-cloud-dim">{active.persona}</p>
+                  </div>
+                  <span className="hidden rounded-full border border-cloud/15 bg-navy-900/70 px-3 py-1 text-[10px] font-medium uppercase tracking-kicker text-cloud-muted sm:inline-flex">
+                    {active.runtime}
+                  </span>
                 </div>
 
-                <figure className="mt-7 rounded-2xl border border-gold/20 bg-gold/[0.04] p-6">
+                <ol className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {[
+                    { k: "01", t: "Challenge", v: active.challenge },
+                    { k: "02", t: "Discovery", v: active.discovery },
+                    { k: "03", t: "Blueprint", v: active.blueprint },
+                    { k: "04", t: "Implementation", v: active.implementation },
+                    { k: "05", t: "Transformation", v: active.transformation },
+                    { k: "06", t: "Current life", v: active.currentLife },
+                  ].map((b) => (
+                    <li
+                      key={b.k}
+                      className="relative rounded-2xl border border-cloud/8 bg-cloud/[0.03] p-5"
+                    >
+                      <span className="font-mono text-[10px] uppercase tracking-kicker text-gold/80">
+                        Act {b.k} · {b.t}
+                      </span>
+                      <p className="mt-3 text-sm leading-relaxed text-cloud-muted">{b.v}</p>
+                    </li>
+                  ))}
+                </ol>
+
+                <figure className="mt-8 rounded-2xl border border-gold/20 bg-gold/[0.04] p-6">
                   <Quote size={20} className="text-gold/70" />
                   <blockquote className="mt-3 text-pretty font-display text-xl font-medium leading-snug text-cloud">
                     {active.quote}
                   </blockquote>
                 </figure>
 
-                <div className="mt-7 flex flex-col items-center justify-between gap-4 sm:flex-row">
-                  <p className="text-sm text-cloud-faint">Composite story · figures illustrative</p>
+                <div className="mt-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                  <p className="text-xs text-cloud-faint">
+                    Composite household · names and figures illustrative · drawn from the practice&apos;s 25-year archive.
+                  </p>
                   <Button href="#consultation" size="md">
-                    Start your story
+                    Draft my Blueprint
                     <ArrowRight size={16} />
                   </Button>
                 </div>

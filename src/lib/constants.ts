@@ -30,18 +30,18 @@ export const SOCIAL = [
 ] as const;
 
 export const NAV_LINKS = [
-  { label: "The Blueprint", href: "#operating-system" },
-  { label: "Horizon", href: "#horizon" },
-  { label: "Stories", href: "#stories" },
-  { label: "Architect", href: "#architect" },
-  { label: "Intelligence", href: "#learn" },
+  { label: "The Blueprint", href: "/blueprint" },
+  { label: "Architect", href: "/architect" },
+  { label: "Journeys", href: "/journeys" },
+  { label: "Intelligence", href: "/intelligence" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 /** Conversion paths — primary / secondary / tertiary. */
 export const CTA = {
-  primary: { label: "Design My Wealth Blueprint", href: "#consultation" },
-  secondary: { label: "Assess My Financial Health", href: "#health-score" },
-  tertiary: { label: "Private Client Brief", href: "#architect" },
+  primary: { label: "Design My Wealth Blueprint", href: "/#consultation" },
+  secondary: { label: "Assess My Financial Health", href: "/#health-score" },
+  tertiary: { label: "Private Client Brief", href: "/architect" },
 } as const;
 
 /**

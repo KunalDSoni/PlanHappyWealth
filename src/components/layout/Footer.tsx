@@ -5,34 +5,28 @@ const columns = [
   {
     title: "The Blueprint",
     links: [
-      { label: "Foundation", href: "#operating-system" },
-      { label: "Protection", href: "#operating-system" },
-      { label: "Growth", href: "#operating-system" },
-      { label: "Goals", href: "#operating-system" },
-      { label: "Freedom", href: "#operating-system" },
-      { label: "Legacy", href: "#operating-system" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { label: "Mutual Funds", href: "#operating-system" },
-      { label: "Life Insurance", href: "#operating-system" },
-      { label: "Health Insurance", href: "#operating-system" },
-      { label: "House Purchase Planning", href: "#operating-system" },
-      { label: "Children's Education", href: "#operating-system" },
-      { label: "Tax Planning", href: "#operating-system" },
+      { label: "Six layers, one household", href: "/blueprint" },
+      { label: "Future Wealth Horizon", href: "/blueprint#horizon" },
+      { label: "Financial Health Assessment", href: "/#health-score" },
+      { label: "Services map", href: "/blueprint#services" },
     ],
   },
   {
     title: "Practice",
     links: [
-      { label: "Meet the Architect", href: "#architect" },
-      { label: "Future Wealth Horizon", href: "#horizon" },
-      { label: "Wealth Journeys", href: "#stories" },
-      { label: "Financial Health Assessment", href: "#health-score" },
-      { label: "Wealth Intelligence", href: "#learn" },
-      { label: "Book a Consultation", href: "#consultation" },
+      { label: "Meet the Architect", href: "/architect" },
+      { label: "Wealth Journeys", href: "/journeys" },
+      { label: "Wealth Intelligence", href: "/intelligence" },
+      { label: "Book a Consultation", href: "/contact" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { label: "Contact", href: "/contact" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Disclosures", href: "/disclosures" },
     ],
   },
 ];
@@ -107,10 +101,10 @@ export function Footer() {
             {FOUNDER.name}, {FOUNDER.credentials.join(", ")}.
           </p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <a href="#" className="transition-colors hover:text-cloud-muted">Privacy</a>
-            <a href="#" className="transition-colors hover:text-cloud-muted">Terms</a>
-            <a href="#" className="transition-colors hover:text-cloud-muted">Disclosures</a>
-            <a href="#" className="transition-colors hover:text-cloud-muted">AMFI / SEBI / IRDAI</a>
+            <a href="/privacy" className="transition-colors hover:text-cloud-muted">Privacy</a>
+            <a href="/terms" className="transition-colors hover:text-cloud-muted">Terms</a>
+            <a href="/disclosures" className="transition-colors hover:text-cloud-muted">Disclosures</a>
+            <a href="/disclosures" className="transition-colors hover:text-cloud-muted">AMFI / SEBI / IRDAI</a>
           </div>
         </div>
 
