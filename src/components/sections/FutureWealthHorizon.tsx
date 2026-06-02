@@ -86,9 +86,9 @@ export function FutureWealthHorizon() {
         description="Each marker is a moment we engineer toward — not a guess. As the horizon advances, risk reduces, freedom forms, and the next generation inherits a structure, not a surprise."
       />
 
-      <div className="mt-14 overflow-hidden rounded-[2rem] border border-cloud/10 bg-navy-800/60 shadow-glass-lg backdrop-blur-xl">
+      <div className="mt-12 overflow-hidden rounded-3xl border border-cloud/10 bg-navy-800/60 shadow-glass-lg backdrop-blur-xl sm:rounded-[2rem]">
         {/* Horizon ruler */}
-        <div className="relative px-8 pt-8 md:px-12 md:pt-12">
+        <div className="relative px-5 pt-7 sm:px-8 sm:pt-8 md:px-12 md:pt-12">
           <div className="relative h-px w-full bg-cloud/10">
             <motion.div
               className="absolute left-0 top-0 h-px bg-gradient-to-r from-gold/50 to-gold"
@@ -124,7 +124,7 @@ export function FutureWealthHorizon() {
                     </span>
                     <span
                       className={cn(
-                        "mt-4 font-mono text-[11px] uppercase tracking-kicker transition-colors",
+                        "mt-4 font-mono text-[10px] uppercase tracking-kicker transition-colors sm:text-[11px]",
                         isActive ? "text-gold" : isPast ? "text-cloud-muted" : "text-cloud-faint",
                       )}
                     >
@@ -144,7 +144,7 @@ export function FutureWealthHorizon() {
             initial={{ opacity: 0, y: reduce ? 0 : 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE }}
-            className="bg-navy-800/80 p-8 md:p-12"
+            className="bg-navy-800/80 p-6 sm:p-8 md:p-12"
           >
             <p className="kicker">Horizon · {m.label}</p>
             <h3 className="mt-5 font-display text-display-md font-semibold leading-tight text-cloud">
@@ -166,7 +166,7 @@ export function FutureWealthHorizon() {
             initial={{ opacity: 0, y: reduce ? 0 : 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE, delay: 0.05 }}
-            className="bg-navy-800/80 p-8 md:p-12"
+            className="bg-navy-800/80 p-6 sm:p-8 md:p-12"
           >
             <div className="grid grid-cols-2 gap-6">
               <div>

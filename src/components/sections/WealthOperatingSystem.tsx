@@ -108,7 +108,7 @@ export function WealthOperatingSystem() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, delay: i * 0.05, ease: EASE }}
                     className={cn(
-                      "group grid w-full grid-cols-[3.5rem_2.25rem_1fr_auto] items-center gap-4 rounded-2xl border px-5 py-5 text-left transition-colors duration-300",
+                      "group grid w-full grid-cols-[2.5rem_2rem_1fr_auto] items-center gap-3 rounded-2xl border px-4 py-4 text-left transition-colors duration-300 sm:grid-cols-[3.5rem_2.25rem_1fr_auto] sm:gap-4 sm:px-5 sm:py-5",
                       isActive
                         ? "border-gold/40 bg-navy-800/70 shadow-glass"
                         : "border-cloud/8 bg-navy-800/30 hover:border-cloud/15 hover:bg-navy-800/55",
@@ -127,11 +127,11 @@ export function WealthOperatingSystem() {
                     >
                       <Icon size={16} />
                     </span>
-                    <span>
-                      <span className="block font-display text-xl font-semibold text-cloud">
+                    <span className="min-w-0">
+                      <span className="block font-display text-lg font-semibold text-cloud sm:text-xl">
                         {l.label}
                       </span>
-                      <span className="mt-0.5 block text-xs text-cloud-dim">{l.one}</span>
+                      <span className="mt-0.5 block truncate text-[11px] text-cloud-dim sm:text-xs">{l.one}</span>
                     </span>
                     <ArrowUpRight
                       size={16}
@@ -158,7 +158,7 @@ export function WealthOperatingSystem() {
           initial={{ opacity: 0, y: reduce ? 0 : 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: EASE }}
-          className="relative overflow-hidden rounded-[2rem] border border-cloud/10 bg-navy-800/60 p-8 shadow-glass-lg backdrop-blur-xl md:p-10"
+          className="relative overflow-hidden rounded-3xl border border-cloud/10 bg-navy-800/60 p-6 shadow-glass-lg backdrop-blur-xl sm:rounded-[2rem] sm:p-8 md:p-10"
         >
           <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/10 blur-3xl" />
 

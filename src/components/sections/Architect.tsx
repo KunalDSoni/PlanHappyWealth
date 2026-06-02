@@ -60,7 +60,7 @@ export function Architect() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="relative overflow-hidden rounded-[2rem] border border-cloud/10 bg-navy-800/60 shadow-glass-lg"
+          className="relative overflow-hidden rounded-3xl border border-cloud/10 bg-navy-800/60 shadow-glass-lg sm:rounded-[2rem]"
         >
           {/* Editorial portrait stage — engraved monogram on warm vellum */}
           <div className="relative aspect-[4/5] w-full bg-gradient-to-br from-[#FBF5E2] via-[#F4ECCF] to-[#E6D4A0]">
@@ -174,7 +174,7 @@ export function Architect() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mt-10 rounded-2xl border border-cloud/10 bg-navy-800/60 p-7"
+            className="mt-10 rounded-2xl border border-cloud/10 bg-navy-800/60 p-5 sm:p-7"
           >
             <p className="kicker flex items-center gap-2">
               <GraduationCap size={14} /> The Practice · Four movements
