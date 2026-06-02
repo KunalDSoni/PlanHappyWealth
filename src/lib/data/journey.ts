@@ -39,7 +39,7 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Projected CAGR", value: "11.4%" },
       { label: "Inflation buffer", value: "+8% p.a." },
     ],
-    imageGradient: "from-[#1B3149] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#EEF2FA] via-[#F6F8FC] to-[#FFFFFF]",
   },
   {
     id: "retirement",
@@ -57,7 +57,7 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Safe withdrawal", value: "4.0%" },
       { label: "Longevity cover", value: "Age 92" },
     ],
-    imageGradient: "from-[#23314a] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#FBF4E2] via-[#F8F4EA] to-[#FFFFFF]",
   },
   {
     id: "home",
@@ -75,7 +75,7 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Smart EMI ratio", value: "32%" },
       { label: "Goal funding", value: "On track" },
     ],
-    imageGradient: "from-[#1d2f44] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#EAF1EE] via-[#F4F8F6] to-[#FFFFFF]",
   },
   {
     id: "wealth",
@@ -93,7 +93,7 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Global exposure", value: "25%" },
       { label: "Net XIRR", value: "13.2%" },
     ],
-    imageGradient: "from-[#26384f] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#F6EFDA] via-[#FBF7E8] to-[#FFFFFF]",
   },
   {
     id: "protection",
@@ -111,7 +111,7 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Health cover", value: "₹50 L" },
       { label: "Coverage gap", value: "Closed" },
     ],
-    imageGradient: "from-[#1a2c41] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#E8EEF8] via-[#F2F5FB] to-[#FFFFFF]",
   },
   {
     id: "freedom",
@@ -129,6 +129,6 @@ export const JOURNEY_GOALS: JourneyGoal[] = [
       { label: "Coverage of expenses", value: "112%" },
       { label: "Years saved", value: "7 yrs" },
     ],
-    imageGradient: "from-[#2a3d55] via-[#0E1B2E] to-[#07111F]",
+    imageGradient: "from-[#F0E6D6] via-[#F8F2E6] to-[#FFFFFF]",
   },
 ];

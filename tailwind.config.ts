@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Plan Happy Wealth — Design Tokens
- * A luxury fintech system: deep navy canvas, midnight depth, gold signal, soft-white light.
+ * Plan Happy Wealth — Design Tokens (Light theme)
+ * Bright editorial canvas, soft elevations, gold signal, deep ink for type.
  */
 const config: Config = {
   darkMode: "class",
@@ -14,18 +14,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Core brand palette
+        // "navy" tokens now represent the light canvas + elevated surfaces.
+        // Names retained for class compatibility across components.
         navy: {
-          DEFAULT: "#07111F", // Deep Navy — primary canvas
-          950: "#05080F",
-          900: "#07111F",
-          800: "#0E1B2E", // Midnight Blue — elevated surfaces
-          700: "#13243B",
-          600: "#1B3149",
+          DEFAULT: "#FFFFFF", // Pure white — primary canvas
+          950: "#FFFFFF",
+          900: "#FFFFFF",
+          800: "#F4F6FA", // soft elevated surface
+          700: "#E6EAF1", // hairline / divider zone
+          600: "#D3DAE6",
         },
-        midnight: "#0E1B2E",
+        midnight: "#F4F6FA",
         gold: {
-          DEFAULT: "#D4AF37", // Gold Accent — signal / wealth
+          DEFAULT: "#B8932A", // Slightly deeper gold for legibility on white
           50: "#FBF6E6",
           100: "#F4E6B8",
           200: "#E8CE7F",
@@ -34,11 +35,12 @@ const config: Config = {
           500: "#B8932A",
           600: "#967421",
         },
+        // "cloud" tokens now represent ink/text on the light canvas.
         cloud: {
-          DEFAULT: "#F8F9FB", // Soft White — light text / inversion
-          muted: "#C7CEDB",
-          dim: "#8B97AC",
-          faint: "#5A6478",
+          DEFAULT: "#0E1B2E", // Deep ink — primary text
+          muted: "#3B4A66",   // secondary text
+          dim: "#5A6478",     // tertiary
+          faint: "#8B97AC",   // quaternary / labels
         },
       },
       fontFamily: {
@@ -62,16 +64,16 @@ const config: Config = {
         "5xl": "2.75rem",
       },
       boxShadow: {
-        glass: "0 1px 0 0 rgba(255,255,255,0.06) inset, 0 24px 64px -24px rgba(0,0,0,0.7)",
-        "glass-lg": "0 1px 0 0 rgba(255,255,255,0.08) inset, 0 40px 120px -32px rgba(0,0,0,0.85)",
-        gold: "0 0 0 1px rgba(212,175,55,0.35), 0 16px 48px -12px rgba(212,175,55,0.35)",
-        "gold-soft": "0 12px 40px -16px rgba(212,175,55,0.45)",
-        elevate: "0 30px 80px -24px rgba(0,0,0,0.6)",
+        glass: "0 1px 0 0 rgba(255,255,255,0.7) inset, 0 18px 48px -24px rgba(14,27,46,0.18)",
+        "glass-lg": "0 1px 0 0 rgba(255,255,255,0.85) inset, 0 32px 96px -32px rgba(14,27,46,0.22)",
+        gold: "0 0 0 1px rgba(184,147,42,0.45), 0 16px 48px -12px rgba(184,147,42,0.28)",
+        "gold-soft": "0 12px 40px -16px rgba(184,147,42,0.35)",
+        elevate: "0 24px 64px -24px rgba(14,27,46,0.18)",
       },
       backgroundImage: {
         "radial-gold": "radial-gradient(circle at 50% 0%, rgba(212,175,55,0.18), transparent 60%)",
-        "radial-aurora": "radial-gradient(60% 60% at 50% 0%, rgba(27,49,73,0.6), transparent 70%)",
-        "gold-line": "linear-gradient(90deg, transparent, rgba(212,175,55,0.6), transparent)",
+        "radial-aurora": "radial-gradient(60% 60% at 50% 0%, rgba(214,224,240,0.7), transparent 70%)",
+        "gold-line": "linear-gradient(90deg, transparent, rgba(184,147,42,0.55), transparent)",
         "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
       },
       transitionTimingFunction: {

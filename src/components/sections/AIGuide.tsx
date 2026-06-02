@@ -69,10 +69,10 @@ export function AIGuide() {
         />
 
         <div className="mx-auto mt-14 max-w-3xl">
-          <div className="overflow-hidden rounded-[2rem] border border-white/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl">
+          <div className="overflow-hidden rounded-[2rem] border border-cloud/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl">
             {/* Header */}
-            <div className="flex items-center gap-3 border-b border-white/8 px-6 py-4">
-              <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gold-200 to-gold-500 text-navy-900">
+            <div className="flex items-center gap-3 border-b border-cloud/8 px-6 py-4">
+              <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-gold-200 to-gold-500 text-cloud">
                 <Bot size={20} />
                 <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-navy-800 bg-emerald-400" />
               </span>
@@ -80,7 +80,7 @@ export function AIGuide() {
                 <p className="text-sm font-medium text-cloud">Plan Happy AI Guide</p>
                 <p className="text-xs text-emerald-300">Online · typically replies instantly</p>
               </div>
-              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1 text-[11px] text-cloud-dim">
+              <span className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-cloud/10 px-3 py-1 text-[11px] text-cloud-dim">
                 <ShieldCheck size={12} className="text-gold" /> Private &amp; secure
               </span>
             </div>
@@ -98,7 +98,7 @@ export function AIGuide() {
                   <span
                     className={cn(
                       "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
-                      m.role === "user" ? "bg-white/8 text-cloud-muted" : "bg-gold/15 text-gold",
+                      m.role === "user" ? "bg-cloud/8 text-cloud-muted" : "bg-gold/15 text-gold",
                     )}
                   >
                     {m.role === "user" ? <User size={15} /> : <Sparkles size={15} />}
@@ -107,8 +107,8 @@ export function AIGuide() {
                     className={cn(
                       "max-w-[78%] text-pretty rounded-2xl px-4 py-3 text-sm leading-relaxed",
                       m.role === "user"
-                        ? "rounded-tr-sm bg-gold text-navy-900"
-                        : "rounded-tl-sm border border-white/8 bg-white/[0.03] text-cloud-muted",
+                        ? "rounded-tr-sm bg-gold text-cloud"
+                        : "rounded-tl-sm border border-cloud/8 bg-cloud/[0.03] text-cloud-muted",
                     )}
                   >
                     {m.content}
@@ -127,7 +127,7 @@ export function AIGuide() {
                     <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/15 text-gold">
                       <Sparkles size={15} />
                     </span>
-                    <div className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-white/8 bg-white/[0.03] px-4 py-3.5">
+                    <div className="flex items-center gap-1 rounded-2xl rounded-tl-sm border border-cloud/8 bg-cloud/[0.03] px-4 py-3.5">
                       {[0, 1, 2].map((d) => (
                         <motion.span
                           key={d}
@@ -149,7 +149,7 @@ export function AIGuide() {
                   <button
                     key={s}
                     onClick={() => send(s)}
-                    className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-cloud-dim transition-colors hover:border-gold/40 hover:text-gold"
+                    className="rounded-full border border-cloud/10 px-3 py-1.5 text-xs text-cloud-dim transition-colors hover:border-gold/40 hover:text-gold"
                   >
                     {s}
                   </button>
@@ -163,7 +163,7 @@ export function AIGuide() {
                 e.preventDefault();
                 send(input);
               }}
-              className="flex items-center gap-3 border-t border-white/8 px-4 py-3"
+              className="flex items-center gap-3 border-t border-cloud/8 px-4 py-3"
             >
               <input
                 value={input}
@@ -175,7 +175,7 @@ export function AIGuide() {
               <button
                 type="submit"
                 disabled={!input.trim() || loading}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-navy-900 transition-opacity disabled:opacity-40"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-gold text-cloud transition-opacity disabled:opacity-40"
                 aria-label="Send message"
               >
                 <Send size={16} />

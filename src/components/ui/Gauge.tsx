@@ -32,8 +32,8 @@ export function Gauge({
   sublabel,
   sweep = 270,
   className,
-  trackColor = "rgba(255,255,255,0.08)",
-  progressColor = "#D4AF37",
+  trackColor = "rgba(14,27,46,0.08)",
+  progressColor = "#B8932A",
   showValue = true,
 }: GaugeProps) {
   const reduce = useReducedMotion();

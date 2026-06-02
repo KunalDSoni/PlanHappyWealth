@@ -19,7 +19,7 @@ export function WhyUs() {
         />
 
         {/* Animated counters */}
-        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/5 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-cloud/10 bg-cloud/5 lg:grid-cols-4">
           {TRUST_STATS.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -27,7 +27,7 @@ export function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative bg-navy-900/80 p-8 transition-colors hover:bg-navy-800/80"
+              className="group relative bg-navy-800/80 p-8 transition-colors hover:bg-navy-800/80"
             >
               <div className="font-display text-4xl font-semibold text-gradient-gold md:text-5xl">
                 <Counter
@@ -49,7 +49,7 @@ export function WhyUs() {
           {CREDENTIALS.map((c) => (
             <div
               key={c.title}
-              className="h-full rounded-2xl border border-white/8 bg-white/[0.02] p-6 transition-colors hover:border-gold/25"
+              className="h-full rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-6 transition-colors hover:border-gold/25"
             >
               <div className="mb-4 h-9 w-9 rounded-lg bg-gradient-to-br from-gold-200 to-gold-500 p-px">
                 <div className="flex h-full w-full items-center justify-center rounded-[7px] bg-navy-900">

@@ -45,7 +45,7 @@ export function SuccessStories() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: EASE }}
             whileHover={{ y: -6 }}
-            className="group relative overflow-hidden rounded-3xl border border-white/10 text-left shadow-glass"
+            className="group relative overflow-hidden rounded-3xl border border-cloud/10 text-left shadow-glass"
           >
             <div className={cn("relative aspect-[4/5] w-full bg-gradient-to-br", s.posterGradient)}>
               {/* Poster shimmer + grain */}
@@ -53,21 +53,21 @@ export function SuccessStories() {
               <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold/10 blur-3xl transition-opacity duration-500 group-hover:opacity-70" />
 
               {/* Play affordance */}
-              <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/20 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:border-gold/50">
-                <Play size={16} className="ml-0.5 text-cloud" fill="currentColor" />
+              <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/20 backdrop-blur-md transition-all duration-500 group-hover:scale-110 group-hover:border-gold/50">
+                <Play size={16} className="ml-0.5 text-white" fill="currentColor" />
               </div>
 
               <div className="absolute inset-x-0 bottom-0 p-6">
                 <span className="text-[11px] font-medium uppercase tracking-kicker text-gold/90">{s.category}</span>
-                <p className="mt-2 font-display text-2xl font-semibold leading-tight text-cloud">{s.name}</p>
-                <p className="mt-1 text-sm text-cloud-dim">{s.persona}</p>
+                <p className="mt-2 font-display text-2xl font-semibold leading-tight text-white">{s.name}</p>
+                <p className="mt-1 text-sm text-white/70">{s.persona}</p>
 
-                <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
+                <div className="mt-4 flex items-center justify-between border-t border-white/15 pt-4">
                   <div>
                     <p className="font-display text-lg font-semibold text-gradient-gold">{s.headlineMetric.value}</p>
-                    <p className="text-[11px] text-cloud-faint">{s.headlineMetric.label}</p>
+                    <p className="text-[11px] text-white/60">{s.headlineMetric.label}</p>
                   </div>
-                  <span className="text-xs text-cloud-dim">{s.runtime}</span>
+                  <span className="text-xs text-white/70">{s.runtime}</span>
                 </div>
               </div>
             </div>
@@ -85,12 +85,12 @@ export function SuccessStories() {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="absolute inset-0 bg-navy-950/80 backdrop-blur-md"
+              className="absolute inset-0 bg-cloud/80 backdrop-blur-md"
               onClick={() => setActive(null)}
             />
             <motion.div
               layoutId={`card-${active.id}`}
-              className="relative z-10 max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-white/12 bg-navy-800 shadow-glass-lg"
+              className="relative z-10 max-h-[88vh] w-full max-w-3xl overflow-y-auto rounded-[2rem] border border-cloud/12 bg-navy-900 shadow-glass-lg"
             >
               {/* Video stage */}
               <div className={cn("relative aspect-video w-full bg-gradient-to-br", active.posterGradient)}>
@@ -99,16 +99,16 @@ export function SuccessStories() {
                   className="group absolute inset-0 flex items-center justify-center"
                   aria-label="Play story"
                 >
-                  <span className="flex h-20 w-20 items-center justify-center rounded-full border border-white/25 bg-black/25 backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
-                    <Play size={26} className="ml-1 text-cloud" fill="currentColor" />
+                  <span className="flex h-20 w-20 items-center justify-center rounded-full border border-white/30 bg-black/25 backdrop-blur-md transition-transform duration-300 group-hover:scale-110">
+                    <Play size={26} className="ml-1 text-white" fill="currentColor" />
                   </span>
                 </button>
-                <span className="absolute left-6 top-6 rounded-full bg-black/30 px-3 py-1 text-xs text-cloud backdrop-blur-md">
+                <span className="absolute left-6 top-6 rounded-full bg-black/30 px-3 py-1 text-xs text-white backdrop-blur-md">
                   {active.runtime} · {active.category}
                 </span>
                 <button
                   onClick={() => setActive(null)}
-                  className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-black/30 text-cloud backdrop-blur-md transition-colors hover:bg-black/50"
+                  className="absolute right-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-md transition-colors hover:bg-black/50"
                   aria-label="Close"
                 >
                   <X size={18} />
@@ -125,7 +125,7 @@ export function SuccessStories() {
                     { k: "The Journey", v: active.journey },
                     { k: "Outcome", v: active.outcome },
                   ].map((b, i) => (
-                    <div key={b.k} className="relative rounded-2xl border border-white/8 bg-white/[0.02] p-5">
+                    <div key={b.k} className="relative rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-5">
                       <span className="text-[11px] font-semibold uppercase tracking-kicker text-gold/80">
                         {String(i + 1).padStart(2, "0")} · {b.k}
                       </span>

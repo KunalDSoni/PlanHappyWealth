@@ -84,17 +84,17 @@ export function Consultation() {
                 className={`group relative flex flex-col rounded-3xl border p-7 transition-all duration-500 ${
                   p.primary
                     ? "border-gold/40 bg-gold/[0.06] shadow-gold-soft lg:scale-[1.03]"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20"
+                    : "border-cloud/10 bg-cloud/[0.02] hover:border-cloud/20"
                 }`}
               >
                 {p.tag && (
-                  <span className="absolute -top-3 left-7 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-[11px] font-semibold text-navy-900">
+                  <span className="absolute -top-3 left-7 inline-flex items-center gap-1 rounded-full bg-gold px-3 py-1 text-[11px] font-semibold text-cloud">
                     <Star size={11} fill="currentColor" /> {p.tag}
                   </span>
                 )}
                 <span
                   className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
-                    p.primary ? "bg-gold text-navy-900" : "bg-white/5 text-gold"
+                    p.primary ? "bg-gold text-cloud" : "bg-cloud/5 text-gold"
                   }`}
                 >
                   <Icon size={22} />
@@ -119,10 +119,10 @@ export function Consultation() {
 
         {/* Booking form */}
         <div id="book-form" className="mx-auto mt-16 max-w-4xl scroll-mt-28">
-          <div className="overflow-hidden rounded-[2rem] border border-white/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl">
+          <div className="overflow-hidden rounded-[2rem] border border-cloud/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl">
             <div className="grid md:grid-cols-[1fr_1.1fr]">
               {/* Reassurance rail */}
-              <div className="relative hidden flex-col justify-between border-r border-white/8 bg-gradient-to-br from-[#1b3149]/60 to-transparent p-8 md:flex">
+              <div className="relative hidden flex-col justify-between border-r border-cloud/8 bg-gradient-to-br from-navy-800/80 to-transparent p-8 md:flex">
                 <div>
                   <p className="kicker">Your free session</p>
                   <h3 className="mt-4 font-display text-2xl font-semibold text-cloud">
@@ -172,7 +172,7 @@ export function Consultation() {
                         <select
                           id="goal"
                           name="goal"
-                          className="w-full rounded-xl border border-white/10 bg-navy-900/60 px-4 py-3 text-sm text-cloud focus:border-gold/50 focus:outline-none"
+                          className="w-full rounded-xl border border-cloud/10 bg-navy-800/60 px-4 py-3 text-sm text-cloud focus:border-gold/50 focus:outline-none"
                           defaultValue={JOURNEY_GOALS[1].label}
                         >
                           {JOURNEY_GOALS.map((g) => (
@@ -247,7 +247,7 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="w-full rounded-xl border border-white/10 bg-navy-900/60 px-4 py-3 text-sm text-cloud placeholder:text-cloud-faint focus:border-gold/50 focus:outline-none"
+        className="w-full rounded-xl border border-cloud/10 bg-navy-800/60 px-4 py-3 text-sm text-cloud placeholder:text-cloud-faint focus:border-gold/50 focus:outline-none"
       />
     </div>
   );

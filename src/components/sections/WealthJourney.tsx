@@ -42,7 +42,7 @@ export function WealthJourney() {
                   "group relative flex shrink-0 items-center gap-4 rounded-2xl border px-5 py-4 text-left transition-all duration-500 ease-luxury lg:shrink",
                   selected
                     ? "border-gold/40 bg-gold/[0.06] shadow-gold-soft"
-                    : "border-white/8 bg-white/[0.02] hover:border-white/15 hover:bg-white/[0.04]",
+                    : "border-cloud/8 bg-cloud/[0.02] hover:border-cloud/15 hover:bg-cloud/[0.04]",
                 )}
               >
                 {selected && (
@@ -55,7 +55,7 @@ export function WealthJourney() {
                 <span
                   className={cn(
                     "flex h-11 w-11 items-center justify-center rounded-xl transition-colors",
-                    selected ? "bg-gold text-navy-900" : "bg-white/5 text-cloud-muted group-hover:text-cloud",
+                    selected ? "bg-gold text-cloud" : "bg-cloud/5 text-cloud-muted group-hover:text-cloud",
                   )}
                 >
                   <Icon size={20} />
@@ -81,7 +81,7 @@ export function WealthJourney() {
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.5, ease: EASE }}
               className={cn(
-                "relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br p-8 shadow-glass md:p-10",
+                "relative h-full overflow-hidden rounded-3xl border border-cloud/10 bg-gradient-to-br p-8 shadow-glass md:p-10",
                 goal.imageGradient,
               )}
             >
@@ -103,7 +103,7 @@ export function WealthJourney() {
 
               <div className="mt-8 grid grid-cols-3 gap-3">
                 {goal.pillars.map((p) => (
-                  <div key={p.label} className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+                  <div key={p.label} className="rounded-2xl border border-cloud/8 bg-cloud/[0.03] p-4">
                     <p className="font-display text-lg font-semibold text-cloud">{p.value}</p>
                     <p className="mt-1 text-[11px] leading-tight text-cloud-faint">{p.label}</p>
                   </div>

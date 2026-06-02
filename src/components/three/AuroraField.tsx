@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 /**
- * Subtle Three.js layer: a slow-drifting constellation of gold/ivory motes
- * over the navy canvas, with gentle pointer parallax. Intentionally quiet —
+ * Subtle Three.js layer: a slow-drifting constellation of gold/cool-blue motes
+ * over the light canvas, with gentle pointer parallax. Intentionally quiet —
  * depth, not spectacle. Skipped entirely for reduced-motion users.
  */
 export function AuroraField({ className }: { className?: string }) {
@@ -52,9 +52,9 @@ export function AuroraField({ className }: { className?: string }) {
       map: sprite,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      color: new THREE.Color("#D4AF37"),
-      opacity: 0.55,
+      blending: THREE.NormalBlending,
+      color: new THREE.Color("#B8932A"),
+      opacity: 0.38,
     });
 
     const points = new THREE.Points(geometry, material);
@@ -62,8 +62,8 @@ export function AuroraField({ className }: { className?: string }) {
 
     // A second, cooler layer for depth
     const material2 = material.clone();
-    material2.color = new THREE.Color("#7C93B8");
-    material2.opacity = 0.3;
+    material2.color = new THREE.Color("#3B4A66");
+    material2.opacity = 0.18;
     material2.size = 0.32;
     const points2 = new THREE.Points(geometry.clone(), material2);
     points2.position.z = -6;
@@ -132,7 +132,7 @@ function makeGlowTexture(): THREE.Texture {
   const ctx = canvas.getContext("2d")!;
   const grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
   grad.addColorStop(0, "rgba(255,255,255,1)");
-  grad.addColorStop(0.3, "rgba(255,255,255,0.7)");
+  grad.addColorStop(0.35, "rgba(255,255,255,0.55)");
   grad.addColorStop(1, "rgba(255,255,255,0)");
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, size, size);

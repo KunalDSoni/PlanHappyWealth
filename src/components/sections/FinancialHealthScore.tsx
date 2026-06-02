@@ -59,9 +59,9 @@ export function FinancialHealthScore() {
       />
 
       <div className="mx-auto mt-14 max-w-5xl">
-        <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-navy-800/40 shadow-glass-lg backdrop-blur-xl">
+        <div className="overflow-hidden rounded-[2rem] border border-cloud/10 bg-navy-800/40 shadow-glass-lg backdrop-blur-xl">
           {/* Progress bar */}
-          <div className="h-1 w-full bg-white/5">
+          <div className="h-1 w-full bg-cloud/5">
             <motion.div
               className="h-full bg-gradient-to-r from-gold-200 to-gold"
               animate={{ width: `${progress}%` }}
@@ -102,7 +102,7 @@ export function FinancialHealthScore() {
                     value={input[q.key]}
                     onChange={(e) => setValue(Number(e.target.value))}
                     aria-label={q.label}
-                    className="mt-6 h-2 w-full cursor-pointer appearance-none rounded-full bg-white/10 accent-[#D4AF37]"
+                    className="mt-6 h-2 w-full cursor-pointer appearance-none rounded-full bg-cloud/10 accent-[#D4AF37]"
                   />
                   <div className="mt-2 flex justify-between text-xs text-cloud-faint">
                     <span>{q.kind === "age" ? `${q.min}` : formatINR(q.min, true)}</span>
@@ -119,7 +119,7 @@ export function FinancialHealthScore() {
                             "rounded-full border px-3 py-1.5 text-xs transition-colors",
                             input[q.key] === c
                               ? "border-gold/50 bg-gold/10 text-gold"
-                              : "border-white/10 text-cloud-dim hover:border-white/25 hover:text-cloud",
+                              : "border-cloud/10 text-cloud-dim hover:border-cloud/25 hover:text-cloud",
                           )}
                         >
                           {formatINR(c, true)}
@@ -192,13 +192,13 @@ function Results({
         <div>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {subs.map((s) => (
-              <div key={s.label} className="flex flex-col items-center rounded-2xl border border-white/8 bg-white/[0.02] p-4">
+              <div key={s.label} className="flex flex-col items-center rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-4">
                 <Gauge value={s.value} size={92} stroke={8} showValue label={s.label} />
               </div>
             ))}
           </div>
 
-          <div className="mt-6 grid gap-3 rounded-2xl border border-white/8 bg-white/[0.02] p-5 sm:grid-cols-3">
+          <div className="mt-6 grid gap-3 rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-5 sm:grid-cols-3">
             <div>
               <p className="text-xs text-cloud-faint">Projected by {input.retirementAge}</p>
               <p className="mt-1 font-display text-xl font-semibold text-cloud">{formatINR(result.projectedCorpus, true)}</p>
@@ -222,7 +222,7 @@ function Results({
         <h4 className="font-display text-xl font-semibold text-cloud">Your priority moves</h4>
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {result.recommendations.map((r) => (
-            <div key={r.title} className="rounded-2xl border border-white/8 bg-white/[0.02] p-5">
+            <div key={r.title} className="rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-5">
               <div className="flex items-center gap-2">
                 <span
                   className={cn(
@@ -231,7 +231,7 @@ function Results({
                       ? "bg-amber-400/15 text-amber-300"
                       : r.priority === "medium"
                         ? "bg-gold/15 text-gold"
-                        : "bg-white/8 text-cloud-dim",
+                        : "bg-cloud/8 text-cloud-dim",
                   )}
                 >
                   {r.priority} · {r.pillar}

@@ -26,14 +26,14 @@ export function DashboardDemo() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.9, ease: EASE }}
-          className="mt-14 overflow-hidden rounded-[1.75rem] border border-white/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl"
+          className="mt-14 overflow-hidden rounded-[1.75rem] border border-cloud/12 bg-navy-800/50 shadow-glass-lg backdrop-blur-xl"
         >
           {/* Window chrome */}
-          <div className="flex items-center gap-2 border-b border-white/8 px-5 py-3.5">
-            <span className="h-3 w-3 rounded-full bg-white/15" />
-            <span className="h-3 w-3 rounded-full bg-white/15" />
-            <span className="h-3 w-3 rounded-full bg-white/15" />
-            <div className="ml-4 flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 text-xs text-cloud-dim">
+          <div className="flex items-center gap-2 border-b border-cloud/8 px-5 py-3.5">
+            <span className="h-3 w-3 rounded-full bg-cloud/15" />
+            <span className="h-3 w-3 rounded-full bg-cloud/15" />
+            <span className="h-3 w-3 rounded-full bg-cloud/15" />
+            <div className="ml-4 flex items-center gap-2 rounded-full bg-cloud/5 px-3 py-1 text-xs text-cloud-dim">
               <Compass size={12} className="text-gold" /> planhappywealth.com / dashboard
             </div>
             <div className="ml-auto flex gap-4 text-xs text-cloud-faint">
@@ -46,7 +46,7 @@ export function DashboardDemo() {
           <div className="grid gap-5 p-5 md:p-6 lg:grid-cols-3">
             {/* Net worth — spans 2 */}
             <div className="lg:col-span-2">
-              <div className="flex h-full flex-col rounded-2xl border border-white/8 bg-navy-900/60 p-6">
+              <div className="flex h-full flex-col rounded-2xl border border-cloud/8 bg-navy-800/60 p-6">
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="flex items-center gap-1.5 text-xs text-cloud-dim">
@@ -55,11 +55,11 @@ export function DashboardDemo() {
                     <p className="mt-2 font-display text-4xl font-semibold text-cloud">₹2.26 Cr</p>
                     <p className="mt-1 text-sm text-emerald-300">▲ ₹48.2 L this year · +27%</p>
                   </div>
-                  <div className="flex gap-1 rounded-full border border-white/8 p-1 text-[11px]">
+                  <div className="flex gap-1 rounded-full border border-cloud/8 p-1 text-[11px]">
                     {["1Y", "3Y", "All"].map((t, i) => (
                       <span
                         key={t}
-                        className={cn("rounded-full px-2.5 py-1", i === 2 ? "bg-gold text-navy-900" : "text-cloud-dim")}
+                        className={cn("rounded-full px-2.5 py-1", i === 2 ? "bg-gold text-cloud" : "text-cloud-dim")}
                       >
                         {t}
                       </span>
@@ -71,7 +71,7 @@ export function DashboardDemo() {
             </div>
 
             {/* Retirement readiness */}
-            <div className="flex flex-col items-center justify-center rounded-2xl border border-white/8 bg-navy-900/60 p-6">
+            <div className="flex flex-col items-center justify-center rounded-2xl border border-cloud/8 bg-navy-800/60 p-6">
               <p className="self-start text-xs text-cloud-dim">Retirement readiness</p>
               <Gauge value={64} size={168} stroke={13} label="On track" sublabel="to retire at 60" className="mt-2" />
               <p className="mt-3 text-center text-xs text-cloud-faint">
@@ -80,7 +80,7 @@ export function DashboardDemo() {
             </div>
 
             {/* Goal progress */}
-            <div className="rounded-2xl border border-white/8 bg-navy-900/60 p-6 lg:col-span-2">
+            <div className="rounded-2xl border border-cloud/8 bg-navy-800/60 p-6 lg:col-span-2">
               <p className="flex items-center gap-1.5 text-xs text-cloud-dim">
                 <Target size={13} className="text-gold" /> Goal progress
               </p>
@@ -93,7 +93,7 @@ export function DashboardDemo() {
                         {g.current}% · ETA {g.eta}
                       </span>
                     </div>
-                    <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-white/6">
+                    <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-cloud/6">
                       <motion.div
                         className="h-full rounded-full bg-gradient-to-r from-gold-200 to-gold"
                         initial={{ width: 0 }}
@@ -108,7 +108,7 @@ export function DashboardDemo() {
             </div>
 
             {/* Asset allocation */}
-            <div className="rounded-2xl border border-white/8 bg-navy-900/60 p-6">
+            <div className="rounded-2xl border border-cloud/8 bg-navy-800/60 p-6">
               <p className="flex items-center gap-1.5 text-xs text-cloud-dim">
                 <PieChart size={13} className="text-gold" /> Asset allocation
               </p>
@@ -144,7 +144,7 @@ export function DashboardDemo() {
                   <p className="text-xs text-cloud-faint">Projected freedom year</p>
                 </div>
               </div>
-              <div className="mt-5 h-3 overflow-hidden rounded-full bg-white/8">
+              <div className="mt-5 h-3 overflow-hidden rounded-full bg-cloud/8">
                 <motion.div
                   className="relative h-full rounded-full bg-gradient-to-r from-gold-200 via-gold to-gold-500"
                   initial={{ width: 0 }}
@@ -193,7 +193,7 @@ function NetWorthChart() {
           </linearGradient>
         </defs>
         {[0.25, 0.5, 0.75].map((g) => (
-          <line key={g} x1="0" x2={w} y1={h * g} y2={h * g} stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+          <line key={g} x1="0" x2={w} y1={h * g} y2={h * g} stroke="rgba(14,27,46,0.08)" strokeWidth="1" />
         ))}
         <path d={area} fill="url(#nw-area)" />
         <motion.path
@@ -228,7 +228,7 @@ function Donut() {
 
   return (
     <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={stroke} />
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(14,27,46,0.08)" strokeWidth={stroke} />
       {ALLOCATION.map((a) => {
         const len = (a.pct / 100) * c;
         const seg = (

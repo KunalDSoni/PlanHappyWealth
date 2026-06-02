@@ -34,7 +34,7 @@ export function EducationHub() {
               "rounded-full border px-4 py-2 text-sm transition-all duration-300",
               filter === cat
                 ? "border-gold/50 bg-gold/10 text-gold"
-                : "border-white/10 text-cloud-dim hover:border-white/25 hover:text-cloud",
+                : "border-cloud/10 text-cloud-dim hover:border-cloud/25 hover:text-cloud",
             )}
           >
             {cat}
@@ -51,7 +51,7 @@ export function EducationHub() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: EASE }}
           whileHover={{ y: -4 }}
-          className="group relative flex min-h-[26rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#22344c] via-[#0E1B2E] to-[#07111F] p-8 shadow-glass md:p-10"
+          className="group relative flex min-h-[26rem] flex-col justify-end overflow-hidden rounded-3xl border border-cloud/10 bg-gradient-to-br from-navy-700 via-navy-800 to-navy-900 p-8 shadow-glass md:p-10"
         >
           <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-gold/15 blur-3xl transition-opacity duration-500 group-hover:opacity-80" />
           <div className="absolute inset-0 bg-noise opacity-[0.04]" />
@@ -83,7 +83,7 @@ export function EducationHub() {
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease: EASE }}
                 whileHover={{ x: 4 }}
-                className="group flex items-start gap-4 rounded-2xl border border-white/8 bg-white/[0.02] p-5 transition-colors hover:border-gold/25"
+                className="group flex items-start gap-4 rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-5 transition-colors hover:border-gold/25"
               >
                 <span
                   className="mt-1 h-12 w-12 shrink-0 rounded-xl"
@@ -101,7 +101,7 @@ export function EducationHub() {
             ))}
           </AnimatePresence>
           {visible.length === 0 && (
-            <p className="rounded-2xl border border-white/8 bg-white/[0.02] p-8 text-center text-sm text-cloud-faint">
+            <p className="rounded-2xl border border-cloud/8 bg-cloud/[0.02] p-8 text-center text-sm text-cloud-faint">
               More {filter} stories coming soon.
             </p>
           )}

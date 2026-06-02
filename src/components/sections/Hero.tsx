@@ -33,7 +33,6 @@ export function Hero() {
   });
   const yText = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 160]);
   const yCard = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -120]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section
@@ -46,7 +45,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-navy-900 to-transparent" />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-8 lg:grid-cols-[1.15fr_0.85fr]">
-        <motion.div style={{ y: yText, opacity }} variants={container} initial="hidden" animate="show">
+        <motion.div style={{ y: yText }} variants={container} initial="hidden" animate="show">
           <motion.div variants={item} className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/5 px-4 py-1.5">
             <Sparkles size={14} className="text-gold" />
             <span className="text-xs font-medium tracking-wide text-gold/90">
@@ -85,9 +84,9 @@ export function Hero() {
             <span className="inline-flex items-center gap-2">
               <ShieldCheck size={16} className="text-gold/80" /> SEBI-registered fiduciaries
             </span>
-            <span className="hidden h-4 w-px bg-white/10 sm:block" />
+            <span className="hidden h-4 w-px bg-cloud/10 sm:block" />
             <span>2,400+ families guided</span>
-            <span className="hidden h-4 w-px bg-white/10 sm:block" />
+            <span className="hidden h-4 w-px bg-cloud/10 sm:block" />
             <span>₹1,850 Cr advised</span>
           </motion.div>
         </motion.div>
@@ -104,22 +103,6 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 1 }}
-        className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
-      >
-        <span className="text-[10px] uppercase tracking-kicker text-cloud-faint">Scroll</span>
-        <span className="flex h-9 w-5 items-start justify-center rounded-full border border-white/15 p-1">
-          <motion.span
-            className="h-1.5 w-1.5 rounded-full bg-gold"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          />
-        </span>
-      </motion.div>
     </section>
   );
 }
@@ -171,7 +154,7 @@ function HeroProofCard() {
               <span className="text-cloud-dim">{row.label}</span>
               <span className="font-medium text-cloud">{row.value}</span>
             </div>
-            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-white/8">
+            <div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-cloud/8">
               <motion.div
                 className="h-full rounded-full bg-gradient-to-r from-gold-200 to-gold"
                 initial={{ width: 0 }}

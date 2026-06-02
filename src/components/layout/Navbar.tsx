@@ -28,7 +28,7 @@ export function Navbar() {
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-500 ease-luxury md:px-8",
           scrolled
-            ? "my-3 rounded-full border border-white/10 bg-navy-900/70 py-2.5 backdrop-blur-xl shadow-glass md:mx-6"
+            ? "my-3 rounded-full border border-cloud/10 bg-navy-800/70 py-2.5 backdrop-blur-xl shadow-glass md:mx-6"
             : "py-5",
         )}
       >
@@ -83,7 +83,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-base text-cloud-muted transition-colors hover:bg-white/5 hover:text-cloud"
+                  className="rounded-xl px-4 py-3 text-base text-cloud-muted transition-colors hover:bg-cloud/5 hover:text-cloud"
                 >
                   {link.label}
                 </a>

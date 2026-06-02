@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* ──────────────────────────────────────────────────────────────
-   Plan Happy Wealth — Global foundation
-   Luxury fintech: deep navy canvas, gold signal, frosted depth.
+   Plan Happy Wealth — Global foundation (Light theme)
+   Bright editorial canvas, soft elevations, gold signal.
    ────────────────────────────────────────────────────────────── */
 
 :root {
@@ -13,16 +13,16 @@
   --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --bg: #07111f;
-  --bg-elev: #0e1b2e;
-  --gold: #d4af37;
-  --cloud: #f8f9fb;
+  --bg: #ffffff;
+  --bg-elev: #f4f6fa;
+  --gold: #b8932a;
+  --cloud: #0e1b2e;
 
-  --ring: rgba(212, 175, 55, 0.5);
-  --hairline: rgba(255, 255, 255, 0.08);
-  --glass: rgba(255, 255, 255, 0.04);
+  --ring: rgba(184, 147, 42, 0.5);
+  --hairline: rgba(14, 27, 46, 0.08);
+  --glass: rgba(255, 255, 255, 0.65);
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @layer base {
@@ -52,8 +52,8 @@
   }
 
   ::selection {
-    background: rgba(212, 175, 55, 0.28);
-    color: #fff;
+    background: rgba(184, 147, 42, 0.22);
+    color: #0e1b2e;
   }
 
   /* Refined scrollbar */
@@ -61,15 +61,15 @@
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #05080f;
+    background: #f4f6fa;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1b3149;
+    background: #c9d1de;
     border-radius: 999px;
-    border: 2px solid #05080f;
+    border: 2px solid #f4f6fa;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2a466a;
+    background: #a9b3c4;
   }
 }
 
@@ -78,8 +78,8 @@
   .glass {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.02)
+      rgba(255, 255, 255, 0.85),
+      rgba(255, 255, 255, 0.65)
     );
     backdrop-filter: blur(20px) saturate(140%);
     -webkit-backdrop-filter: blur(20px) saturate(140%);
@@ -89,24 +89,24 @@
   .glass-strong {
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.09),
-      rgba(255, 255, 255, 0.03)
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.78)
     );
     backdrop-filter: blur(28px) saturate(160%);
     -webkit-backdrop-filter: blur(28px) saturate(160%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(14, 27, 46, 0.1);
   }
 
-  /* Editorial gold-to-white gradient text */
+  /* Editorial gold-to-ink gradient text */
   .text-gradient-gold {
-    background: linear-gradient(120deg, #f4e6b8 0%, #d4af37 45%, #967421 100%);
+    background: linear-gradient(120deg, #b8932a 0%, #967421 55%, #6a5318 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .text-gradient-light {
-    background: linear-gradient(180deg, #ffffff 0%, #c7cedb 100%);
+    background: linear-gradient(180deg, #0e1b2e 0%, #3b4a66 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -123,7 +123,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(212, 175, 55, 0.55),
+      rgba(184, 147, 42, 0.55),
       transparent
     );
   }
@@ -133,7 +133,7 @@
     @apply relative mx-auto w-full max-w-7xl px-6 py-24 md:px-8 md:py-32;
   }
 
-  /* Animated gold-edged shine for premium CTAs */
+  /* Animated shine for premium CTAs */
   .shine::after {
     content: "";
     position: absolute;
@@ -142,7 +142,7 @@
     background: linear-gradient(
       120deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0.55) 50%,
       transparent 70%
     );
     background-size: 200% 100%;
@@ -172,7 +172,7 @@
     background-image: var(--tw-bg-noise, none);
     opacity: 0.025;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
   }
   .mask-fade-b {
     -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
