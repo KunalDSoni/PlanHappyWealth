@@ -1,40 +1,80 @@
 import { Logo } from "@/components/layout/Logo";
-import { SITE } from "@/lib/constants";
+import { SITE, FOUNDER, SOCIAL } from "@/lib/constants";
 
 const columns = [
   {
-    title: "Plan For",
-    links: ["Retirement", "Child Education", "Dream Home", "Wealth Creation", "Family Protection"],
+    title: "The Blueprint",
+    links: [
+      { label: "Foundation", href: "#operating-system" },
+      { label: "Protection", href: "#operating-system" },
+      { label: "Growth", href: "#operating-system" },
+      { label: "Goals", href: "#operating-system" },
+      { label: "Freedom", href: "#operating-system" },
+      { label: "Legacy", href: "#operating-system" },
+    ],
   },
   {
-    title: "Platform",
-    links: ["Financial Health Score", "Wealth Dashboard", "AI Guide", "Education Hub", "Success Stories"],
+    title: "Services",
+    links: [
+      { label: "Mutual Funds", href: "#operating-system" },
+      { label: "Life Insurance", href: "#operating-system" },
+      { label: "Health Insurance", href: "#operating-system" },
+      { label: "House Purchase Planning", href: "#operating-system" },
+      { label: "Children's Education", href: "#operating-system" },
+      { label: "Tax Planning", href: "#operating-system" },
+    ],
   },
   {
-    title: "Company",
-    links: ["Our Philosophy", "Advisors & Credentials", "Careers", "Press", "Contact"],
+    title: "Practice",
+    links: [
+      { label: "Meet the Architect", href: "#architect" },
+      { label: "Future Wealth Horizon", href: "#horizon" },
+      { label: "Wealth Journeys", href: "#stories" },
+      { label: "Financial Health Assessment", href: "#health-score" },
+      { label: "Wealth Intelligence", href: "#learn" },
+      { label: "Book a Consultation", href: "#consultation" },
+    ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-cloud/10 bg-navy-950">
+    <footer className="relative overflow-hidden border-t border-cloud/10 bg-navy-800/40">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gold-line" />
-      <div className="mx-auto max-w-7xl px-6 py-16 md:px-8 md:py-20">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 md:px-8 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <Logo />
             <p className="mt-5 text-pretty text-sm leading-relaxed text-cloud-dim">
-              Helping families build wealth, confidence, and financial freedom — without stress.
-              Outcomes over products. Always.
+              {SITE.description}
             </p>
-            <div className="mt-6 flex flex-col gap-1 text-sm text-cloud-muted">
-              <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-gold">
+            <address className="not-italic mt-6 flex flex-col gap-1 text-sm text-cloud-muted">
+              <span className="text-cloud-dim">{SITE.address}</span>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="transition-colors hover:text-gold"
+              >
                 {SITE.email}
               </a>
-              <a href={`tel:${SITE.phone.replace(/\s/g, "")}`} className="transition-colors hover:text-gold">
+              <a
+                href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+                className="transition-colors hover:text-gold"
+              >
                 {SITE.phone}
               </a>
+            </address>
+            <div className="mt-5 flex gap-3 text-xs">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-full border border-cloud/15 px-3 py-1.5 text-cloud-muted transition-colors hover:border-gold/40 hover:text-gold"
+                >
+                  {s.label}
+                </a>
+              ))}
             </div>
           </div>
 
@@ -45,12 +85,12 @@ export function Footer() {
               </h3>
               <ul className="mt-5 space-y-3">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-sm text-cloud-muted transition-colors hover:text-cloud"
                     >
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -61,23 +101,26 @@ export function Footer() {
 
         <div className="mt-14 gold-rule" />
 
-        <div className="mt-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-          <p className="text-xs text-cloud-faint">
-            © {new Date().getFullYear()} {SITE.name}. All rights reserved.
+        <div className="mt-8 grid gap-4 text-xs text-cloud-faint md:grid-cols-[1fr_auto] md:items-center">
+          <p>
+            © {new Date().getFullYear()} {SITE.name}. {SITE.registration}. Founded by{" "}
+            {FOUNDER.name}, {FOUNDER.credentials.join(", ")}.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-cloud-faint">
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a href="#" className="transition-colors hover:text-cloud-muted">Privacy</a>
             <a href="#" className="transition-colors hover:text-cloud-muted">Terms</a>
             <a href="#" className="transition-colors hover:text-cloud-muted">Disclosures</a>
-            <a href="#" className="transition-colors hover:text-cloud-muted">SEBI / IRDAI</a>
+            <a href="#" className="transition-colors hover:text-cloud-muted">AMFI / SEBI / IRDAI</a>
           </div>
         </div>
 
         <p className="mt-8 max-w-4xl text-[11px] leading-relaxed text-cloud-faint">
-          Investments are subject to market risks. Read all scheme-related documents carefully.
-          Plan Happy Wealth provides financial planning and educational guidance; it is not a
-          guarantee of returns. Illustrative figures and projections shown on this site are for
-          educational purposes and do not constitute investment, tax, or legal advice.
+          Mutual fund investments are subject to market risks. Read all scheme-related
+          documents carefully. Plan Happy Wealth is an AMFI-registered Mutual Fund Distributor
+          and provides financial planning and educational guidance. Past performance is not
+          indicative of future returns. Illustrative figures, household specimens and
+          projections shown on this site are for educational purposes and do not constitute
+          investment, tax or legal advice.
         </p>
       </div>
     </footer>

@@ -1,9 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { BeliefManifesto } from "@/components/sections/BeliefManifesto";
 import { WealthOperatingSystem } from "@/components/sections/WealthOperatingSystem";
 import { FutureWealthHorizon } from "@/components/sections/FutureWealthHorizon";
-import { WealthJourney } from "@/components/sections/WealthJourney";
+import { Services } from "@/components/sections/Services";
 import { FinancialHealthScore } from "@/components/sections/FinancialHealthScore";
 import { Architect } from "@/components/sections/Architect";
 import { SuccessStories } from "@/components/sections/SuccessStories";
@@ -22,10 +23,11 @@ export default function HomePage() {
         <div className="pointer-events-none fixed inset-0 -z-10 bg-radial-aurora opacity-50" aria-hidden="true" />
 
         <Hero />
+        <BeliefManifesto />
         <WealthOperatingSystem />
         <SectionDivider />
         <FutureWealthHorizon />
-        <WealthJourney />
+        <Services />
         <SectionDivider />
         <FinancialHealthScore />
         <Architect />

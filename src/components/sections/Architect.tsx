@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, BadgeCheck, Compass, GraduationCap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FOUNDER, SITE } from "@/lib/constants";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -26,10 +27,10 @@ const PHILOSOPHY = [
 ];
 
 const CREDENTIALS = [
-  { k: "Certified Financial Planner™", v: "CFP CM · FPSB India" },
-  { k: "IRDAI · SEBI", v: "Registered Investment & Insurance Advisor" },
-  { k: "Practice", v: "18+ years · 2,400+ families" },
-  { k: "Discipline", v: "Behavioural finance · Estate architecture" },
+  { k: "Certified Financial Planner™", v: "CFP · FPSB India" },
+  { k: "Qualified Personal Finance", v: "QPFP · Network FP" },
+  { k: "MBA", v: "Family Wealth & Investments" },
+  { k: "Practice", v: `${FOUNDER.experienceYears}+ years · AMFI Registered` },
 ];
 
 const FRAMEWORK = [
@@ -44,13 +45,13 @@ export function Architect() {
     <section id="architect" className="section scroll-mt-24">
       <SectionHeading
         align="left"
-        kicker="The Architect"
+        kicker="Meet your Wealth Architect"
         title={
           <>
-            Seema Ahuja. <span className="text-gradient-gold">Chief Wealth Architect.</span>
+            {FOUNDER.name}. <span className="text-gradient-gold">{FOUNDER.role}.</span>
           </>
         }
-        description="Eighteen years of practice across protection, portfolios and succession. The doctrine you'll meet on the page is the doctrine she has spent a career refining."
+        description={FOUNDER.bio}
       />
 
       <div className="mt-14 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
@@ -108,11 +109,13 @@ export function Architect() {
                 <p className="font-mono text-[10px] uppercase tracking-kicker text-cloud-muted">
                   Founder
                 </p>
-                <p className="mt-1 font-display text-2xl font-semibold text-cloud">Seema Ahuja</p>
-                <p className="text-sm text-cloud-dim">Chief Wealth Architect</p>
+                <p className="mt-1 font-display text-2xl font-semibold text-cloud">{FOUNDER.name}</p>
+                <p className="text-sm text-cloud-dim">
+                  {FOUNDER.role} · {FOUNDER.credentials.join(", ")}
+                </p>
               </div>
               <span className="rounded-full border border-cloud/30 bg-navy-900/80 px-3 py-1 text-[10px] font-medium uppercase tracking-kicker text-cloud-muted">
-                Est. 2007
+                Est. {SITE.establishedYear}
               </span>
             </div>
           </div>
