@@ -1,9 +1,11 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
+import { WealthOperatingSystem } from "@/components/sections/WealthOperatingSystem";
+import { FutureWealthHorizon } from "@/components/sections/FutureWealthHorizon";
 import { WealthJourney } from "@/components/sections/WealthJourney";
 import { FinancialHealthScore } from "@/components/sections/FinancialHealthScore";
-import { WhyUs } from "@/components/sections/WhyUs";
+import { Architect } from "@/components/sections/Architect";
 import { SuccessStories } from "@/components/sections/SuccessStories";
 import { DashboardDemo } from "@/components/sections/DashboardDemo";
 import { EducationHub } from "@/components/sections/EducationHub";
@@ -17,13 +19,16 @@ export default function HomePage() {
       <Navbar />
       <main id="main" className="relative">
         {/* Ambient page glow */}
-        <div className="pointer-events-none fixed inset-0 -z-10 bg-radial-aurora opacity-60" aria-hidden="true" />
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-radial-aurora opacity-50" aria-hidden="true" />
 
         <Hero />
+        <WealthOperatingSystem />
+        <SectionDivider />
+        <FutureWealthHorizon />
         <WealthJourney />
         <SectionDivider />
         <FinancialHealthScore />
-        <WhyUs />
+        <Architect />
         <SuccessStories />
         <DashboardDemo />
         <EducationHub />

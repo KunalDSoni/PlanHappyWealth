@@ -3,25 +3,26 @@
 export const SITE = {
   name: "Plan Happy Wealth",
   shortName: "PHW",
-  tagline: "Build wealth, confidence, and financial freedom — without stress.",
+  positioning: "Family Wealth Architects",
+  tagline: "Designing Wealth. Protecting Futures. Creating Legacies.",
   description:
-    "Plan Happy Wealth helps families build wealth, confidence, and financial freedom with a personalized roadmap. Not advice — a partnership in your life's biggest goals.",
+    "Plan Happy Wealth is a private family-wealth practice. We architect multi-generational prosperity through a deliberate blueprint that protects, grows, and transfers wealth with intent.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://planhappywealth.com",
   email: "hello@planhappywealth.com",
   phone: "+91 98000 00000",
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Your Journey", href: "#journey" },
-  { label: "Health Score", href: "#health-score" },
+  { label: "The Blueprint", href: "#operating-system" },
+  { label: "Horizon", href: "#horizon" },
   { label: "Stories", href: "#stories" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Learn", href: "#learn" },
+  { label: "Architect", href: "#architect" },
+  { label: "Intelligence", href: "#learn" },
 ] as const;
 
 /** Conversion paths — primary / secondary / tertiary. */
 export const CTA = {
-  primary: { label: "Book a Consultation", href: "#consultation" },
-  secondary: { label: "Calculate Your Financial Health", href: "#health-score" },
-  tertiary: { label: "Download Wealth Blueprint", href: "#blueprint" },
+  primary: { label: "Design My Wealth Blueprint", href: "#consultation" },
+  secondary: { label: "Assess My Financial Health", href: "#health-score" },
+  tertiary: { label: "Private Client Brief", href: "#architect" },
 } as const;
